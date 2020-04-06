@@ -15,16 +15,16 @@ function convertToZEB() {
                 continue lineloop;
             }
         }
-        cleanedLines.push(line)
+        cleanedLines.push(line);
     }
     for (let i in cleanedLines) {
         let line = cleanedLines[i]+"";
-        let date = line.slice(3, 5)
+        let date = line.slice(3, 5);
         let time = line.slice(81, 86);
         let hours = parseInt(time.slice(0,-3));
         let minutes = Math.ceil(parseInt(time.slice(3))/6.0)/10.0;
-        time = hours+minutes+0.0
-        addTableRow(date, time)
+        time = hours+minutes+0.0;
+        addTableRow(date, time);
     }
 }
 
