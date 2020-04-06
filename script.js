@@ -1,10 +1,10 @@
 const workTableBody = document.getElementById("work_table_body");
-const textAreaZEUS = document.getElementById("zeus_text_area");
+const textAreaZeus = document.getElementById("zeus_text_area");
 
 function convertToZEB() {
     workTableBody.innerHTML = "";
     let ignoreArray = ["Sa", "So", "---", "Periode", "Datum"];
-    let zeusText = textAreaZEUS.value;
+    let zeusText = textAreaZeus.value;
     let zeusLines = zeusText.split("\n").slice(6, -9);
     let cleanedLines = [];
     lineloop:    

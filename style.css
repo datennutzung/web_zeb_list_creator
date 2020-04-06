@@ -45,4 +45,5 @@ th {
 #button_div {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    justify-content: space-evenly;
 }
