@@ -38,6 +38,6 @@ function copyMe(element) {
 }
 
 function addTableRow(day, value) {
-    row = "<tr onclick='copyMe(this)'><td>"+day+".</td><td>"+value+"</td></tr>";
+    row = "<tr onclick='copyMe(this)' title='Click2Copy'><td>"+day+".</td><td>"+value+"</td></tr>";
     workTableBody.innerHTML += row;
 }

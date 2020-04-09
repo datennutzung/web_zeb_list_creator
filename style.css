@@ -29,7 +29,7 @@ table, th, td {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: lightgray;
+    background-color: #dfdfdf;
 }
 
 tbody tr:hover {
