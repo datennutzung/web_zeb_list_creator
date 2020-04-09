@@ -5,4 +5,4 @@ Extrahiert die HH.mm aus dem Monatjournal des Zeus Web und konvertiert sie in ei
 Kopiere einfach dein Monatsjournal in das Textfeld, drück auf Konvertieren und kopiere die Stunden aus der rechten Tabelle in dein ZEB.
 Es war noch nie so einfach!
 
-Die konversation findet vollständig lokal statt, sodass keine sensiblen Daten irgendwohin übertragen werden.
+Die Konvertierung findet vollständig lokal statt, sodass keine sensiblen Daten irgendwohin übertragen werden.
