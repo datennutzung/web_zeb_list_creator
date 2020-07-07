@@ -25,11 +25,13 @@
             </table>
         </div>
         <div id="button_div">
-            <input type="number" id="time_to_do" value="60" min="0" max="192" title="Benötigte Arbeitszeit">
+            <input type="number" id="time_to_do" value="0" min="0" max="192" title="Benötigte Arbeitszeit (0 = keine Änderung)">
             <button id="read_zeus_button" onclick="convertToZEB()">Zu ZEB konvertieren</button>
             <a href="https://zt-web2.ise.fraunhofer.de/zwwf/" target="_blank">Zeiterfassung ZeusWeb</a>
             <a href="https://sigma-selfservices.sigma.fraunhofer.de/SIGMASelfService/" target="_blank">SIGMA Self
                 Service (Web-ZEB)</a>
+            <p>Zeus Zeit: <span id="worked_time_span">0</span></p>
+            <p>WebZeb Zeit: <span id="complete_time_span">0</span></p>
         </div>
     </div>
     <script type="text/javascript" src="./script.js"></script>

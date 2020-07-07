@@ -4,7 +4,7 @@ const timeToDo = document.getElementById('time_to_do');
 
 function convertToZEB() {
 	workTableBody.innerHTML = '';
-	let ignoreArray = ['Sa', 'So', '---', 'Periode', 'Datum']; // hinzufügen, dass ich die Feiertage nicht mitzähle
+	let ignoreArray = ['Sa', 'So', '---', 'Periode', 'Datum', 'Feiertag allgemein'];
 	let zeusText = textAreaZeus.value;
 	let zeusLines = zeusText.split('\n').slice(6, -9);
 	let cleanedLines = [];
@@ -24,21 +24,30 @@ function convertToZEB() {
 		let date = line.slice(3, 5);
 		let time = line.slice(81, 86);
 		let hours = parseInt(time.slice(0, -3));
-		let minutes = Math.ceil(parseInt(time.slice(3)) / 6.0) / 10.0;
+		let minutes = parseInt(time.slice(3)) / 60.0;
 		time = hours + minutes + 0.0;
 		dateTimeArray.push([date, time]);
 		workedTime += time;
 	}
-	let missingTime = timeToDo - workedTime;
+	document.getElementById("worked_time_span").innerHTML = Math.round(workedTime*10)/10;
+	let missingTime
+	if (timeToDo.value == 0) {
+		missingTime = 0;
+	} else {
+		missingTime = timeToDo.value - workedTime;
+	}
+	let completeTime = 0;
 	for (let dateTime of dateTimeArray) {
 		let date = dateTime[0];
 		let time = dateTime[1];
 		let workTimePercentage = time / workedTime;
-		let addTime = workTimePercentage / missingTime;
-		missingTime -= addTime;
+		let addTime = workTimePercentage * missingTime;
 		time += addTime;
+		time = Math.round(time*10)/10;
 		addTableRow(date, time);
+		completeTime += time;
 	}
+	document.getElementById("complete_time_span").innerHTML = completeTime;
 }
 
 function copyMe(element) {
